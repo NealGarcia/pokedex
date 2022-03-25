@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     },
     card:{
         cursor: "pointer",
-        backgroundColor: "lightgrey",
+        backgroundColor: "black",
         color: "white",
         "&:hover": {
             backgroundColor: 'rgb(90, 90, 90)'
