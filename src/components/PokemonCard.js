@@ -6,6 +6,17 @@ const useStyles = makeStyles((theme) => ({
         margin: "auto",
         width: 130,
         height: 130
+    },
+    card:{
+        cursor: "pointer",
+        backgroundColor: "lightgrey",
+        color: "white",
+        "&:hover": {
+            backgroundColor: 'rgb(90, 90, 90)'
+        }
+    },
+    cardContent:{
+        textAlign: "center",
     }
 }))
 
@@ -16,9 +27,9 @@ function PokemonCard(props) {
     return (
         // xs small devices take up 12 slots; sm devices take up 2 slots 
         <Grid item xs ={12} sm ={2}> 
-            <Card>
+            <Card className = {classes.card}>
                 <CardMedia className = {classes.cardMedia} image = {image}></CardMedia>
-                <CardContent>
+                <CardContent className = {classes.cardContent}>
                     <Typography>
                         {name}
                     </Typography>
