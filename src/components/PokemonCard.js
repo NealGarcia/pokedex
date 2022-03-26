@@ -1,4 +1,5 @@
 import { Card, Grid, CardMedia, CardContent, Typography, makeStyles } from '@material-ui/core';
+import { Link } from 'react-router-dom'
 import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
@@ -17,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
     },
     cardContent:{
         textAlign: "center",
+    },
+    link:{
+        textDecoration: "none",
     }
 }))
 
@@ -27,14 +31,16 @@ function PokemonCard(props) {
     return (
         // xs small devices take up 12 slots; sm devices take up 2 slots 
         <Grid item xs ={12} sm ={2}> 
-            <Card className = {classes.card}>
-                <CardMedia className = {classes.cardMedia} image = {image}></CardMedia>
-                <CardContent className = {classes.cardContent}>
-                    <Typography>
-                        {name}
-                    </Typography>
-                </CardContent>
-            </Card>
+            <Link className = {classes.link} to = {"/pokemon/" + id}>
+                <Card className = {classes.card}>
+                    <CardMedia className = {classes.cardMedia} image = {image}></CardMedia>
+                    <CardContent className = {classes.cardContent}>
+                        <Typography>
+                            {name}
+                        </Typography>
+                    </CardContent>
+                </Card>
+            </Link>
         </Grid>
     );
 }
