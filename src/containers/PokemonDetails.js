@@ -17,6 +17,10 @@ const styles = (theme) => ({
     textTitle: {
         textTransform: 'upperCase',
     },
+    pokemonImg: {
+        width: '150px',
+        height: '150px',
+    }
 })
 
 class PokemonDetails extends Component {
@@ -41,11 +45,13 @@ class PokemonDetails extends Component {
         const { classes } = this.props
         const { pokemon } = this.state
         if(pokemon){
-            const { name } = pokemon
+            const { name, sprites } = pokemon
             return(
                 <Box >
                     <Box className = {classes.pokedexContainer}>
-                        <Typography className = {classes.textTitle} variant="h1">{name}</Typography>
+                        <Typography className = {classes.textTitle} variant="h3">{name}</Typography>
+                        <img className = {classes.pokemonImg} src = {sprites.front_default} alt = "pokemon-sprite"></img>
+                    
                     </Box>
                 </Box>
             )
