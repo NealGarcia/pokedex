@@ -18,6 +18,8 @@ const useStyles = makeStyles((theme) => ({
     },
     cardContent:{
         textAlign: "center",
+        textTransform: 'upperCase',
+
     },
     link:{
         textDecoration: "none",
